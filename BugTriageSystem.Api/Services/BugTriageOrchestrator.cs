@@ -14,7 +14,7 @@ public class BugTriageOrchestrator(
         {
             // Step 1: Classification
             var classification = await classifierAgent.Classify(bugReport);
-            logger.LogInformation("Classification completed: {Category}", classification.Category);
+            logger.LogInformation("Classification completed: {Category}", classification.Classification);
 
             // Step 2: Fix Recommendation
             var recommendation = await fixRecommenderAgent.Recommend(
@@ -25,7 +25,7 @@ public class BugTriageOrchestrator(
 
             // Step 3: Review
             var review = await reviewerAgent.Review(bugReport, classification, recommendation);
-            logger.LogInformation("Review completed: {Confidence}", review.Confidence);
+            logger.LogInformation("Review completed: {Confidence}", review.ConfidenceScore);
 
             return new TriageResult(classification, recommendation, review);
         }

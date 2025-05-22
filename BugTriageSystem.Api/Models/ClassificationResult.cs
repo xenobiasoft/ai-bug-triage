@@ -2,7 +2,7 @@
 
 public class ClassificationResult
 {
-    public string Category { get; set; }
-    public string Severity { get; set; }
-    public double Confidence { get; set; }
+    public string Classification { get; set; } = string.Empty;
+    public string Justification { get; set; } = string.Empty;
+    public double ConfidenceScore { get; set; }
 }

@@ -6,7 +6,7 @@ namespace BugTriageSystem.Api.Agents;
 
 public class ReviewerAgent(IAzureOpenAiService openAiService)
 {
-    private const string SystemPrompt = "Review the classification and fix recommendation. Flag vague or hallucinated suggestions. Give a confidence score.";
+    private const string SystemPrompt = "Review the bug report, classification, and fix recommendation. Flag vague or hallucinated suggestions. Return a JSON object with IsValid, Justification, and ConfidenceScore.";
 
     public async Task<ReviewResult> Review(string bugReport, ClassificationResult classification, RecommendationResult recommendation)
     {

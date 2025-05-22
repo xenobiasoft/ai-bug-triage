@@ -6,7 +6,7 @@ namespace BugTriageSystem.Api.Agents;
 
 public class FixRecommenderAgent(IAzureOpenAiService openAiService)
 {
-    private const string SystemPrompt = "Based on this bug report and its classification, suggest likely modules, files, or components. Include a brief justification.";
+    private const string SystemPrompt = "Based on this bug report and its classification, suggest likely modules, files, or components. Include a brief justification. Return a JSON object with AffectedAreas, Justification, Recommendation, and ConfidenceScore between 0 and 1.";
 
     public async Task<RecommendationResult> Recommend(string bugReport, ClassificationResult classification)
     {

@@ -3,6 +3,6 @@
 public class ReviewResult
 {
     public bool IsValid { get; set; }
-    public double Confidence { get; set; }
-    public string Comments { get; set; }
+    public double ConfidenceScore { get; set; }
+    public string Justification { get; set; } = string.Empty;
 }

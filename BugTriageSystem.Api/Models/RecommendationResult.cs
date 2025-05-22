@@ -2,7 +2,8 @@
 
 public class RecommendationResult
 {
-    public List<string> AffectedAreas { get; set; }
-    public string Justification { get; set; }
-    public List<string> RelatedPRs { get; set; }
+    public List<string> AffectedAreas { get; set; } = [];
+    public string Justification { get; set; } = string.Empty;
+    public string Recommendation { get; set; } = string.Empty;
+    public double ConfidenceScore { get; set; }
 }
